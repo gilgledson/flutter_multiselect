@@ -102,7 +102,7 @@ class _SelectionModalState extends State<SelectionModal> {
                   ButtonTheme(
                     height: 50.0,
                     child: RaisedButton.icon(
-                      label: Text('Cancel'),
+                      label: Text('Cancelar'),
                       icon: Icon(
                         Icons.clear,
                         size: 20.0,
@@ -116,7 +116,7 @@ class _SelectionModalState extends State<SelectionModal> {
                   ButtonTheme(
                     height: 50.0,
                     child: RaisedButton.icon(
-                      label: Text('Save'),
+                      label: Text('Salvar'),
                       icon: Icon(
                         Icons.save,
                         size: 20.0,
@@ -161,7 +161,7 @@ class _SelectionModalState extends State<SelectionModal> {
               maxWidth: MediaQuery.of(context).size.width - 80.0),
           child: Text(existingItem['text'], overflow: TextOverflow.ellipsis),
         ),
-        deleteButtonTooltipMessage: 'Tap to delete this item',
+        deleteButtonTooltipMessage: 'Toque para excluir este item',
         deleteIcon: Icon(Icons.cancel),
         deleteIconColor: Colors.grey,
         onDeleted: () {
@@ -179,7 +179,7 @@ class _SelectionModalState extends State<SelectionModal> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 new Text(
-                  'Currently selected ${selectedOptions.length} items (tap to remove)', // use languageService here
+                  selectedOptions.length > 1 ? 'Atualmente ${selectedOptions.length} itens selecionados (toque para remover) ': 'Atualmente ${selectedOptions.length} item selecionado (toque para remover) ', // use languageService here
                   style: TextStyle(
                       color: Colors.black87, fontWeight: FontWeight.bold),
                 ),
@@ -244,7 +244,7 @@ class _SelectionModalState extends State<SelectionModal> {
                     ),
                   ),
                   filled: true,
-                  hintText: "Search...",
+                  hintText: "Pesquisar...",
                   fillColor: Colors.white,
                   suffix: SizedBox(
                       height: 25.0,
@@ -255,7 +255,7 @@ class _SelectionModalState extends State<SelectionModal> {
                           searchOperation('');
                         },
                         padding: EdgeInsets.all(0.0),
-                        tooltip: 'Clear',
+                        tooltip: 'Limpar',
                       ))),
             ),
           ),
